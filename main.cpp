@@ -89,7 +89,7 @@ int main()
             {
                 if(vid[cur]->titles(vid[cur + 1]))
                 {
-                    swap(vid[cur], vid[cur + 1])
+                    swap(vid[cur], vid[cur + 1]);
                 }
             }
         }
