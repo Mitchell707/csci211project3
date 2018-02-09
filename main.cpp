@@ -15,7 +15,14 @@ string rating =      "";
 int counter = 0;
 int const MAX = 100;
 
-//Video video;
+/*
+    Convert rating into *****
+    Convert length into a double
+    Make sorting methods -> title, length, rating
+    
+    Make the error messages written in the rubric
+
+*/
 
 int main()
 {
@@ -47,9 +54,54 @@ int main()
         counter++;
     }
     
+    if(sort == "length")
+    {
+        for(int last = counter - 1; last > 0; last --)
+        {
+            for(int cur = 0; cur < last; cur++)
+            {
+                if(vid[cur]->longer(vid[cur + 1]))
+                {
+                    swap(vid[cur], vid[cur + 1]);
+
+                }
+            }
+        }
+    }
+    else if(sort == "rating")
+    {
+        for(int last = counter - 1; last > 0; last --)
+        {
+             for(int cur = 0; cur < last; cur++)
+             {
+                 if(vid[cur]->longer(vid[cur + 1]))
+                 {
+                    swap(vid[cur], vid[cur + 1]);
+                 }
+             }
+         }
+    }
+    else
+    {
+        for(int last = counter - 1; last > 0; last--)
+        {
+            for(int cur = 0; cur < last; cur++)
+            {
+                if(vid[cur]->titles(vid[cur + 1]))
+                {
+                    swap(vid[cur], vid[cur + 1])
+                }
+            }
+        }
+    }
+
+
     for(int i = 0; i < counter; i++)
     {
         vid[i]->print();
 
     }
+    
+    return 0;
+
 }

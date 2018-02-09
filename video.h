@@ -19,6 +19,10 @@ class Video
         Video(string, string, string, string, string);
  
         void print();
+        
+        bool longer(Video*);
+        bool ratings(Video*);
+        bool titles(Video*);
 
 };
 
