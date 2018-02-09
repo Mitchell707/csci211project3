@@ -4,6 +4,7 @@
 
 using namespace std;
 
+const int ASCIIOFFSET = 48;
 
 Video::Video(string t, string u, string d, string l, string r)
 {
@@ -18,7 +19,21 @@ Video::Video(string t, string u, string d, string l, string r)
 
 void Video::print()
 {
-    cout << title << ", " << url << ", " << description << ", " << length << ", " << rating << endl;
+    int temp = 0;
+    
+    temp = rating[0];
+    
+    temp -= ASCIIOFFSET;
+
+    cout << title << ", " << url << ", " << description << ", " << length << ", ";
+    
+    for( int i = 0; i < temp; i++)
+    {
+        cout << "*";
+
+    }
+    
+    cout << endl;
 
 }
 
