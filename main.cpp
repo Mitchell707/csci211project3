@@ -74,7 +74,7 @@ int main()
         {
              for(int cur = 0; cur < last; cur++)
              {
-                 if(vid[cur]->longer(vid[cur + 1]))
+                 if(vid[cur]->ratings(vid[cur + 1]))
                  {
                     swap(vid[cur], vid[cur + 1]);
                  }
