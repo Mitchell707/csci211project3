@@ -4,7 +4,7 @@
 
 using namespace std;
 
-string sort;
+string sort =        "";
 
 string title =       "";
 string url =         "";
@@ -22,6 +22,8 @@ int main()
     //cout << "Sorting Method" << endl;
     cin >> sort;
     
+    cin.ignore();
+
     Video *vid[MAX];
     
     while(cin.peek() != -1)
