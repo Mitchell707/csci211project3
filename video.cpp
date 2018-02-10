@@ -2,6 +2,9 @@
 #include <string>
 #include "video.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+
 using namespace std;
 
 const int ASCIIOFFSET = 48;
@@ -26,8 +29,8 @@ Video::Video(string t, string u, string d, string l, string r)
             temp = true;
         }
     }
-
-    length = l;
+    
+    length = strtof(l, l.size());
     rating = r;
 
 }

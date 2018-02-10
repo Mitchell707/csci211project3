@@ -32,7 +32,7 @@ int main()
     if(sort != "length" && sort != "rating" && sort != "title")
     {
         cout << sort << " is not a legal sorting method, giving up." << endl;
-        return 0;
+        return 1;
     }
 
     cin.ignore();
@@ -59,9 +59,10 @@ int main()
 
         counter++;
 
-        if(counter > 100)
+        if(counter >= 100)
         {
             cout << "Too many videos, giving up." << endl;
+            return 1;
         }
     }
     
