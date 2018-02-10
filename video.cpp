@@ -8,9 +8,25 @@ const int ASCIIOFFSET = 48;
 
 Video::Video(string t, string u, string d, string l, string r)
 {
+    bool temp = false;
+
     title = t;
     url = u;
     description = d;
+    
+    while(!temp)
+    {
+        if(l[l.size() - 1] == '0' || l[l.size() - 1] == '.')
+        {
+            l.resize(l.size() - 1);
+            
+        }
+        else
+        {
+            temp = true;
+        }
+    }
+
     length = l;
     rating = r;
 
