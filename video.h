@@ -12,7 +12,7 @@ class Video
         string title;
         string url;
         string description;
-        float length;
+        string length;
         string rating;
 
     public:

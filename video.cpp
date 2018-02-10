@@ -30,7 +30,7 @@ Video::Video(string t, string u, string d, string l, string r)
         }
     }
     
-    length = strtof(l, l.size());
+    length = l;
     rating = r;
 
 }
