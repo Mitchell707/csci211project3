@@ -59,7 +59,7 @@ int main()
 
         counter++;
 
-        if(counter >= 100)
+        if(counter > 100)
         {
             cout << "Too many videos, giving up." << endl;
             return 0;
