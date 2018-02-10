@@ -51,6 +51,6 @@ bool Video::ratings(Video *other)
 
 bool Video::titles(Video *other)
 {
-    return title < other->title;
+    return title > other->title;
 
 }
