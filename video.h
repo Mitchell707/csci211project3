@@ -12,11 +12,11 @@ class Video
         string title;
         string url;
         string description;
-        string length;
-        string rating;
+        float length;
+        int rating;
 
     public:
-        Video(string, string, string, string, string);
+        Video(string, string, string, float, int);
  
         void print();
         

@@ -9,14 +9,14 @@ using namespace std;
 
 const int ASCIIOFFSET = 48;
 
-Video::Video(string t, string u, string d, string l, string r)
+Video::Video(string t, string u, string d, float l, int r)
 {
     bool temp = false;
 
     title = t;
     url = u;
     description = d;
-    
+    /*    
     while(!temp)
     {
         if(l[l.size() - 1] == '0' || l[l.size() - 1] == '.')
@@ -29,7 +29,7 @@ Video::Video(string t, string u, string d, string l, string r)
             temp = true;
         }
     }
-    
+    */
     length = l;
     rating = r;
 
@@ -38,11 +38,9 @@ Video::Video(string t, string u, string d, string l, string r)
 
 void Video::print()
 {
-    int temp = 0;
+    int temp = rating;
     
-    temp = rating[0];
-    
-    temp -= ASCIIOFFSET;
+    //temp -= ASCIIOFFSET;
 
     cout << title << ", " << url << ", " << description << ", " << length << ", ";
     

@@ -9,9 +9,9 @@ string sort =        "";
 string title =       "";
 string url =         "";
 string description = "";
-string length =      "";
-string rating =      "";
 
+float length = 0.00;
+int rating = 0;
 int counter = 0;
 int const MAX = 100;
 
