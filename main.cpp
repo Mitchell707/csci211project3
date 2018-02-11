@@ -21,7 +21,7 @@ int main()
 
     cin >> sort;
     
-    if(sort != "length" && sort != "rating" && sort != "title" && sort != "Length" && sort != "Rating" && sort != "Title" sort != "LENGTH" && sort != "RATING" && sort != "TITLE") //makes sure sort input is acceptable
+    if(sort != "length" && sort != "rating" && sort != "title" && sort != "Length" && sort != "Rating" && sort != "Title" && sort != "LENGTH" && sort != "RATING" && sort != "TITLE") //makes sure sort input is acceptable
     {
         cerr << sort << " is not a legal sorting method, giving up." << endl;
         return 1;
