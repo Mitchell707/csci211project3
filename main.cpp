@@ -31,7 +31,7 @@ int main()
     
     if(sort != "length" && sort != "rating" && sort != "title")
     {
-        cout << sort << " is not a legal sorting method, giving up." << endl;
+        cerr << sort << " is not a legal sorting method, giving up." << endl;
         return 1;
     }
 
@@ -61,7 +61,7 @@ int main()
 
         if(counter > 100)
         {
-            cout << "Too many videos, giving up." << endl;
+            cerr << "Too many videos, giving up." << endl;
             return 1;
         }
     }
