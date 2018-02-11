@@ -16,6 +16,7 @@ class Video
         int rating;
 
     public:
+        
         Video(string, string, string, float, int);
  
         void print();

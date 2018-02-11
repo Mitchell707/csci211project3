@@ -2,12 +2,7 @@
 #include <string>
 #include "video.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
 using namespace std;
-
-const int ASCIIOFFSET = 48;
 
 Video::Video(string t, string u, string d, float l, int r)
 {
@@ -16,38 +11,20 @@ Video::Video(string t, string u, string d, float l, int r)
     title = t;
     url = u;
     description = d;
-    /*    
-    while(!temp)
-    {
-        if(l[l.size() - 1] == '0' || l[l.size() - 1] == '.')
-        {
-            l.resize(l.size() - 1);
-            
-        }
-        else
-        {
-            temp = true;
-        }
-    }
-    */
     length = l;
     rating = r;
 
 }
 
-
 void Video::print()
 {
     int temp = rating;
     
-    //temp -= ASCIIOFFSET;
-
     cout << title << ", " << url << ", " << description << ", " << length << ", ";
     
     for( int i = 0; i < temp; i++)
     {
         cout << "*";
-
     }
     
     cout << endl;

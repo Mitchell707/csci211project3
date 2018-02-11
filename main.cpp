@@ -4,8 +4,9 @@
 
 using namespace std;
 
-string sort =        "";
+//initializing the variables for turn-in
 
+string sort =        "";
 string title =       "";
 string url =         "";
 string description = "";
@@ -15,21 +16,12 @@ int rating = 0;
 int counter = 0;
 int const MAX = 100;
 
-/*
-    Convert rating into *****
-    Convert length into a double
-    Make sorting methods -> title, length, rating
-    
-    Make the error messages written in the rubric
-
-*/
-
 int main()
 {
-    //cout << "Sorting Method" << endl;
+
     cin >> sort;
     
-    if(sort != "length" && sort != "rating" && sort != "title")
+    if(sort != "length" && sort != "rating" && sort != "title" && sort != "Length" && sort != "Rating" && sort != "Title" sort != "LENGTH" && sort != "RATING" && sort != "TITLE") //makes sure sort input is acceptable
     {
         cerr << sort << " is not a legal sorting method, giving up." << endl;
         return 1;
@@ -37,11 +29,10 @@ int main()
 
     cin.ignore();
 
-    Video *vid[MAX];
+    Video *vid[MAX]; //sets array to 100
     
-    while(cin.peek() != -1)
+    while(cin.peek() != -1) //Goes until input has ended
     {
-        //Video * video = new Video[10];
 
         getline(cin, title);
         
@@ -68,13 +59,13 @@ int main()
     
     if(sort == "length")
     {
-        for(int last = counter - 1; last > 0; last --)
+        for(int last = counter - 1; last > 0; last --) //counts backwards from the last item in the array
         {
-            for(int cur = 0; cur < last; cur++)
+            for(int cur = 0; cur < last; cur++) 
             {
-                if(vid[cur]->longer(vid[cur + 1]))
+                if(vid[cur]->longer(vid[cur + 1])) //uses a pointer function to compare the size of two floats
                 {
-                    swap(vid[cur], vid[cur + 1]);
+                    swap(vid[cur], vid[cur + 1]); //uses a standard algorithm to swap two values
 
                 }
             }
@@ -93,7 +84,7 @@ int main()
              }
          }
     }
-    else
+    else //makes the default sorting by title.
     {
         for(int last = counter - 1; last > 0; last--)
         {
