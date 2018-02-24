@@ -7,7 +7,7 @@ using namespace std;
 
 //initializing the variables for turn-in
 
-string sort =        "";
+string command =     "";
 string title =       "";
 string url =         "";
 string description = "";
@@ -17,9 +17,13 @@ int rating = 0;
 int counter = 0;
 int const MAX = 100;
 
+void insertVid();
+
+List vid;
+
 int main()
 {
-
+    /*
     cin >> sort;
     
     if(sort != "length" && sort != "rating" && sort != "title" && sort != "Length" && sort != "Rating" && sort != "Title" && sort != "LENGTH" && sort != "RATING" && sort != "TITLE") //makes sure sort input is acceptable
@@ -27,40 +31,65 @@ int main()
         cerr << sort << " is not a legal sorting method, giving up." << endl;
         return 1;
     }
-
+    
     cin.ignore();
+    */
 
     //Video *vid[MAX]; //sets array to 100
     
-    List vid;
+    //List vid;
 
     while(cin.peek() != -1) //Goes until input has ended
     {
-
-        getline(cin, title);
+        cin >> command;
         
-        getline(cin, url);
-
-        getline(cin, description);
-
-        cin >> length;
-
-        cin >> rating;
-        
-        //vid[counter] = new Video(title, url, description, length, rating);
-        
-        vid.insert(new Video(title, url, description, length, rating));
-
-        cin.ignore();
-
-        counter++;
-
-        if(counter > 100)
+        if(command == "insert")
         {
-            cerr << "Too many videos, giving up." << endl;
-            return 1;
+            insertVid();
+            
         }
+        else if(command == "print")
+        {
+            vid.printList();
+
+        }
+        else if(command == "length")
+        {
+            cout << vid.length() << endl; 
+
+        }
+        else if(command == "lookup")
+        {
+            
+
+        }
+
     }
+
+    return 0;
+}
+
+
+void insertVid()
+{
+    cin.ignore();
+
+    getline(cin, title);
+        
+    getline(cin, url);
+
+    getline(cin, description);
+
+    cin >> length;
+
+    cin >> rating;
+        
+    //vid[counter] = new Video(title, url, description, length, rating);
+      
+    vid.insert(new Video(title, url, description, length, rating));
+
+}
+
     /*
     if(sort == "length")
     {
@@ -111,8 +140,4 @@ int main()
     }
     */
     
-    vid.printList();
-
-    return 0;
-
-}
+    //vid.printList();
