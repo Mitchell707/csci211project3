@@ -46,11 +46,15 @@ void List::insert(Video* video)
 
 void List::printList()
 {
-    for(Node *ptr = m_head; ptr; ptr = ptr->m_next)
+    Node *ptr = m_head;
+
+    while(ptr != NULL)
     {
         cout << ptr->m_value->title << ", " << ptr->m_value->url <<  ", " << ptr->m_value->description <<  ", " << ptr->m_value->length <<  ", " << ptr->m_value->rating << endl;
-
+    
+        ptr = ptr->m_next;
     }
+    
 }
 
 bool List::freeName(string name)
@@ -61,7 +65,7 @@ bool List::freeName(string name)
     {
         if(cur->m_value->title == name)
         {
-            cout << "False" << endl;
+            //cout << "False" << endl;
             return false;
             
         }
@@ -70,6 +74,6 @@ bool List::freeName(string name)
             cur = cur->m_next;
         }
     }
-    cout << "True" << endl;
+    //cout << "True" << endl;
     return true;
 }

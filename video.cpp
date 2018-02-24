@@ -16,6 +16,7 @@ Video::Video(string t, string u, string d, float l, int r)
 
 }
 
+/*
 void Video::print()
 {
     int temp = rating;
@@ -30,6 +31,7 @@ void Video::print()
     cout << endl;
 
 }
+*/
 
 bool Video::longer(Video *other)
 {
