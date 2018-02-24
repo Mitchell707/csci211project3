@@ -69,14 +69,14 @@ List::~List()
 
 void List::insert(Video* video)
 {
-    if(!m_head/* || value < m_head->m_value*/)
+    if(!m_head)
     {
         m_head = new Node(video, m_head);
     }
     else
     {
         Node *ptr = m_head;
-        while(ptr->m_next != NULL/* && value > ptr->m_next->m_value*/)
+        while(ptr->m_next != NULL)
         {
             ptr = ptr->m_next;
         }

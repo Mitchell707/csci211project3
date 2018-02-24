@@ -43,7 +43,7 @@ void List::printList()
 {
     for(Node *ptr = m_head; ptr; ptr = ptr->m_next)
     {
-        cout << ptr->m_value->title << endl;
+        cout << ptr->m_value->title << ", " << ptr->m_value->url <<  ", " << ptr->m_value->description <<  ", " << ptr->m_value->length <<  ", " << ptr->m_value->rating << endl;
 
     }
 }

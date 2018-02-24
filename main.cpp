@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "video.h"
+#include "Vlist.h"
 
 using namespace std;
 
