@@ -35,7 +35,7 @@ int main()
         }
         else if(command == "print")
         {
-            vid.print();
+            //vid.print();
 
         }
         else if(command == "length")
