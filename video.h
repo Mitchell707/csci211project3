@@ -19,7 +19,7 @@ class Video
         
         Video(string, string, string, float, int);
  
-        void print();
+        //void print();
         
         bool longer(Video*);
         bool ratings(Video*);

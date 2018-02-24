@@ -44,7 +44,7 @@ void List::insert(Video* video)
     m_length++;
 }
 
-void List::printList()
+void List::print()
 {
     Node *ptr = m_head;
 
