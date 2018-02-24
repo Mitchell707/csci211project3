@@ -56,6 +56,7 @@ bool List::freeName(string name)
     {
         if(cur->m_value->title == name)
         {
+            cout << "False" << endl;
             return false;
             
         }
@@ -64,6 +65,6 @@ bool List::freeName(string name)
             cur = cur->m_next;
         }
     }
-    //cout << "True" << endl;
+    cout << "True" << endl;
     return true;
 }
