@@ -26,7 +26,7 @@ class Video
         bool titles(Video*);
 
 };
-
+/*
 class List
 {
     public:
@@ -50,5 +50,5 @@ class List
         Node *m_head;
         int m_length;
 };
-
+*/
 #endif
