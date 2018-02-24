@@ -1,50 +1,49 @@
 #include <iostream>
 #include <string>
 #include "video.h"
+#include "Vlist.h"
 
 using namespace std;
 
-Video::Video(string t, string u, string d, float l, int r)
+List::List()
 {
-    bool temp = false;
-
-    title = t;
-    url = u;
-    description = d;
-    length = l;
-    rating = r;
-
+    m_head = NULL;
+    m_length = 0;
 }
 
-void Video::print()
+List::~List()
 {
-    int temp = rating;
-    
-    cout << title << ", " << url << ", " << description << ", " << length << ", ";
-    
-    for( int i = 0; i < temp; i++)
+    while (m_head)
     {
-        cout << "*";
+        Node *tmp = m_head;
+        m_head = m_head->m_next;
+        delete tmp;
+    }   
+}
+
+void List::insert(Video* video)
+{
+    if(!m_head/* || value < m_head->m_value*/)
+    {
+        m_head = new Node(video, m_head);
     }
-    
-    cout << endl;
-
+    else
+    {
+        Node *ptr = m_head;
+        while(ptr->m_next != NULL/* && value > ptr->m_next->m_value*/)
+        {
+            ptr = ptr->m_next;
+        }
+        ptr->m_next = new Node(video, ptr->m_next);
+    }
+    m_length++;
 }
 
-bool Video::longer(Video *other)
+void List::printList()
 {
-    return length > other->length;
+    for(Node *ptr = m_head; ptr; ptr = ptr->m_next)
+    {
+        cout << ptr->m_value->title << endl;
 
-}
-
-bool Video::ratings(Video *other)
-{
-    return rating < other->rating;
-
-}
-
-bool Video::titles(Video *other)
-{
-    return title > other->title;
-
+    }
 }
