@@ -29,8 +29,10 @@ int main()
 
     cin.ignore();
 
-    Video *vid[MAX]; //sets array to 100
+    //Video *vid[MAX]; //sets array to 100
     
+    List vid;
+
     while(cin.peek() != -1) //Goes until input has ended
     {
 
@@ -44,7 +46,9 @@ int main()
 
         cin >> rating;
         
-        vid[counter] = new Video(title, url, description, length, rating);
+        //vid[counter] = new Video(title, url, description, length, rating);
+        
+        vid.insert(new Video(title, url, description, length, rating));
 
         cin.ignore();
 
@@ -56,7 +60,7 @@ int main()
             return 1;
         }
     }
-    
+    /*
     if(sort == "length")
     {
         for(int last = counter - 1; last > 0; last --) //counts backwards from the last item in the array
@@ -104,7 +108,10 @@ int main()
         vid[i]->print();
 
     }
+    */
     
+    vid.printList();
+
     return 0;
 
 }
