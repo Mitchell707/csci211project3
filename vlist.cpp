@@ -21,6 +21,11 @@ List::~List()
     }   
 }
 
+int List::length()
+{
+    return m_length;
+}
+
 void List::insert(Video* video)
 {
     if(!m_head/* || value < m_head->m_value*/)

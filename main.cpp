@@ -57,6 +57,12 @@ int main()
 
 void insertVid()
 {
+    title       = "";
+    url         = "";
+    description = "";
+    length      = 0.00;
+    rating      = 0;
+    
     cin.ignore();
 
     getline(cin, title);
@@ -74,6 +80,7 @@ void insertVid()
         vid.insert(new Video(title, url, description, length, rating));
     
     }
+    
 }
 
     /*

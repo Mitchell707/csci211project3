@@ -14,7 +14,7 @@ class List
         ~List();
         void insert(Video* video);
         void printList();
-        int length() {return m_length;}
+        int length();// {return m_length;}
         bool freeName(string title);
 
     private:
