@@ -47,3 +47,23 @@ void List::printList()
 
     }
 }
+
+bool List::freeName(string name)
+{
+    Node *cur = m_head;
+    
+    while(cur != NULL)
+    {
+        if(cur->m_value->title == name)
+        {
+            return false;
+            
+        }
+        else
+        {
+            cur = cur->m_next;
+        }
+    }
+    //cout << "True" << endl;
+    return true;
+}

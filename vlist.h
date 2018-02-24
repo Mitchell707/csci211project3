@@ -15,7 +15,8 @@ class List
         void insert(Video* video);
         void printList();
         int length() {return m_length;}
-        
+        bool freeName(string title);
+
     private:
         class Node
         {

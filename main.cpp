@@ -23,21 +23,6 @@ List vid;
 
 int main()
 {
-    /*
-    cin >> sort;
-    
-    if(sort != "length" && sort != "rating" && sort != "title" && sort != "Length" && sort != "Rating" && sort != "Title" && sort != "LENGTH" && sort != "RATING" && sort != "TITLE") //makes sure sort input is acceptable
-    {
-        cerr << sort << " is not a legal sorting method, giving up." << endl;
-        return 1;
-    }
-    
-    cin.ignore();
-    */
-
-    //Video *vid[MAX]; //sets array to 100
-    
-    //List vid;
 
     while(cin.peek() != -1) //Goes until input has ended
     {
@@ -84,10 +69,11 @@ void insertVid()
 
     cin >> rating;
         
-    //vid[counter] = new Video(title, url, description, length, rating);
-      
-    vid.insert(new Video(title, url, description, length, rating));
-
+    if(vid.freeName(title))
+    {
+        vid.insert(new Video(title, url, description, length, rating));
+    
+    }
 }
 
     /*
