@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-//#include "video.h"
+#include "video.h"
 #include "vlist.h"
 
 using namespace std;
@@ -21,10 +21,12 @@ List::~List()
     }   
 }
 
+/*
 int List::length()
 {
     return m_length;
 }
+*/
 
 void List::insert(Video* video)
 {
@@ -50,11 +52,28 @@ void List::print()
 
     while(ptr != NULL)
     {
-        cout << ptr->m_value->title << ", " << ptr->m_value->url <<  ", " << ptr->m_value->description <<  ", " << ptr->m_value->length <<  ", " << ptr->m_value->rating << endl;
-    
+        //cout << ptr->m_value->title << ", " << ptr->m_value->url <<  ", " << ptr->m_value->description <<  ", " << ptr->m_value->length <<  ", " << ptr->m_value->rating << endl;
+        ptr->m_value->print(); 
         ptr = ptr->m_next;
+    }    
+}
+
+void List::search(string name)
+{
+    Node *ptr = m_head;
+
+    while(ptr != NULL)
+    {
+        if(ptr->m_value->title == name)
+        {
+            cout << ptr->m_value->title << ", " << ptr->m_value->url <<  ", " << ptr->m_value->description <<  ", " << ptr->m_value->length <<  ", " << ptr->m_value->rating << endl;
+            return;
+        }
+        else
+        {
+            ptr = ptr->m_next;
+        }
     }
-    
 }
 
 bool List::freeName(string name)

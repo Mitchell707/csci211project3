@@ -14,8 +14,9 @@ class List
         ~List();
         void insert(Video* video);
         void print();
-        int length();// {return m_length;}
+        int length() {return m_length;}
         bool freeName(string title);
+        void search(string name);
 
     private:
         class Node

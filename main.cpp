@@ -24,9 +24,9 @@ List vid;
 int main()
 {
 
-    while(cin.peek() != -1) //Goes until input has ended
+    while(getline(cin, command) //Goes until input has ended
     {
-        cin >> command;
+       // cin >> command;
         
         if(command == "insert")
         {
@@ -45,7 +45,8 @@ int main()
         }
         else if(command == "lookup")
         {
-            
+            getline(cin, title);
+            vid.search(title);
 
         }
 
@@ -55,7 +56,7 @@ int main()
 }
 
 
-void insertVid()
+void insertVid()//(List vid)
 {
     title       = "";
     url         = "";
