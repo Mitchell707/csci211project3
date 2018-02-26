@@ -49,6 +49,16 @@ int main()
             vid.search(title);
 
         }
+        else if(command == "remove")
+        {
+            getline(cin, title);
+            vid.remove(title);
+        }
+        else
+        {
+            cerr<< "<" << command << "> is not a legal command, giving up." << endl;
+            return 1;
+        }
 
     }
 
