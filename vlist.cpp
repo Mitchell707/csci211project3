@@ -41,7 +41,7 @@ bool List::remove(string name)
         m_head = m_head->m_next;
         delete ptr->m_value;
         delete ptr;
-        length--;
+        m_length--;
     }
     else
     {   
@@ -54,7 +54,7 @@ bool List::remove(string name)
                 ptr->m_next = ptr->m_next->m_next;
                 delete tmp->m_value;
                 delete tmp;
-                length--;
+                m_length--;
                 return true;
             }
 
