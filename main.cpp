@@ -24,7 +24,7 @@ List vid;
 int main()
 {
 
-    while(getline(cin, command) //Goes until input has ended
+    while(getline(cin, command)) //Goes until input has ended
     {
        // cin >> command;
         
