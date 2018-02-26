@@ -17,6 +17,7 @@ List::~List()
     {
         Node *tmp = m_head;
         m_head = m_head->m_next;
+        delete tmp->m_value;
         delete tmp;
     }   
 }
@@ -28,23 +29,68 @@ int List::length()
 }
 */
 
+bool List::remove(string name)
+{
+    if(m_head == NULL)
+    {
+        return false;
+    }
+    else if(name == m_head->m_value->gettitle())
+    {
+        Node *ptr = m_head;
+        m_head = m_head->m_next;
+        delete ptr->m_value;
+        delete ptr;
+        length--;
+    }
+    else
+    {   
+        Node *ptr = m_head;
+        while(ptr->m_next != NULL)
+        {
+            if(ptr->m_next->m_value->gettitle() == name)
+            {
+                Node * tmp = ptr->m_next;
+                ptr->m_next = ptr->m_next->m_next;
+                delete tmp->m_value;
+                delete tmp;
+                length--;
+                return true;
+            }
+
+            ptr = ptr->m_next;
+
+        }
+
+        return false;
+    }
+
+    
+}
+
 void List::insert(Video* video)
 {
-    if(!m_head/* || value < m_head->m_value*/)
+    if(!(freeName(video->gettitle())))
+    {
+        return;
+    }
+    else if(m_head==NULL || video->gettitle() < m_head->m_value->gettitle())
     {
         m_head = new Node(video, m_head);
+        m_length++;
     }
     else
     {
         Node *ptr = m_head;
-        while(ptr->m_next != NULL/* && value > ptr->m_next->m_value*/)
+        while(ptr->m_next != NULL && video->gettitle() > ptr->m_next->m_value->gettitle())
         {
             ptr = ptr->m_next;
         }
         ptr->m_next = new Node(video, ptr->m_next);
+        m_length++;
     }
-    m_length++;
 }
+
 
 void List::print()
 {
@@ -64,15 +110,13 @@ void List::search(string name)
 
     while(ptr != NULL)
     {
-        if(ptr->m_value->title == name)
+        if(ptr->m_value->gettitle() == name)
         {
-            cout << ptr->m_value->title << ", " << ptr->m_value->url <<  ", " << ptr->m_value->description <<  ", " << ptr->m_value->length <<  ", " << ptr->m_value->rating << endl;
-            return;
+           // cout << ptr->m_value->title << ", " << ptr->m_value->url <<  ", " << ptr->m_value->description <<  ", " << ptr->m_value->length <<  ", " << ptr->m_value->rating << endl;
+           ptr->m_value->print();
+           return;
         }
-        else
-        {
-            ptr = ptr->m_next;
-        }
+        ptr = ptr->m_next;
     }
 }
 
@@ -82,7 +126,7 @@ bool List::freeName(string name)
     
     while(cur != NULL)
     {
-        if(cur->m_value->title == name)
+        if(cur->m_value->gettitle() == name)
         {
             //cout << "False" << endl;
             return false;

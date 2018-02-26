@@ -17,6 +17,7 @@ class List
         int length() {return m_length;}
         bool freeName(string title);
         void search(string name);
+        bool remove(string name);
 
     private:
         class Node

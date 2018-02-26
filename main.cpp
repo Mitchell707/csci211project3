@@ -64,7 +64,7 @@ void insertVid()//(List vid)
     length      = 0.00;
     rating      = 0;
     
-    cin.ignore();
+    //cin.ignore();
 
     getline(cin, title);
         
@@ -75,7 +75,9 @@ void insertVid()//(List vid)
     cin >> length;
 
     cin >> rating;
-        
+      
+    cin.ignore();
+
     if(vid.freeName(title))
     {
         vid.insert(new Video(title, url, description, length, rating));

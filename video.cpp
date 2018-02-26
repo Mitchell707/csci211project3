@@ -20,6 +20,7 @@ string Video::gettitle()
 {
     return title;
 }
+
 void Video::print()
 {
     int temp = rating;
