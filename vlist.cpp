@@ -39,9 +39,9 @@ bool List::remove(string name)
     {
         Node *ptr = m_head;
         m_head = m_head->m_next;
-        delete ptr->m_value;
+        delete ptr->m_value;            //deletes the value at the list position before deleting the pointer
         delete ptr;
-        m_length--;
+        m_length--;                     //adjusts the length accordingly for reference
     }
     else
     {   
@@ -98,7 +98,6 @@ void List::print()
 
     while(ptr != NULL)
     {
-        //cout << ptr->m_value->title << ", " << ptr->m_value->url <<  ", " << ptr->m_value->description <<  ", " << ptr->m_value->length <<  ", " << ptr->m_value->rating << endl;
         ptr->m_value->print(); 
         ptr = ptr->m_next;
     }    
@@ -112,7 +111,6 @@ void List::search(string name)
     {
         if(ptr->m_value->gettitle() == name)
         {
-           // cout << ptr->m_value->title << ", " << ptr->m_value->url <<  ", " << ptr->m_value->description <<  ", " << ptr->m_value->length <<  ", " << ptr->m_value->rating << endl;
            ptr->m_value->print();
            return;
         }
@@ -131,7 +129,7 @@ bool List::freeName(string name)
     {
         if(cur->m_value->gettitle() == name)
         {
-            //cout << "False" << endl;
+    
             return false;
             
         }
@@ -140,6 +138,6 @@ bool List::freeName(string name)
             cur = cur->m_next;
         }
     }
-    //cout << "True" << endl;
+    
     return true;
 }
