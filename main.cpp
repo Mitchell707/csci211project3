@@ -52,7 +52,10 @@ int main()
         else if(command == "remove")
         {
             getline(cin, title);
-            vid.remove(title);
+            if(!vid.remove(title))
+            {
+                cerr << "<" << title << "< not in list, could not delete." << endl;
+            }
         }
         else
         {
