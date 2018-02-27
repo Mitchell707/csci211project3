@@ -54,7 +54,7 @@ int main()
             getline(cin, title);
             if(!vid.remove(title))
             {
-                cerr << "<" << title << "< not in list, could not delete." << endl;
+                cerr << "Title <" << title << "> not in list, could not delete." << endl;
             }
         }
         else
@@ -69,7 +69,7 @@ int main()
 }
 
 
-void insertVid()//(List vid)
+void insertVid()
 {
     title       = "";
     url         = "";
@@ -98,55 +98,3 @@ void insertVid()//(List vid)
     }
     
 }
-
-    /*
-    if(sort == "length")
-    {
-        for(int last = counter - 1; last > 0; last --) //counts backwards from the last item in the array
-        {
-            for(int cur = 0; cur < last; cur++) 
-            {
-                if(vid[cur]->longer(vid[cur + 1])) //uses a pointer function to compare the size of two floats
-                {
-                    swap(vid[cur], vid[cur + 1]); //uses a standard algorithm to swap two values
-
-                }
-            }
-        }
-    }
-    else if(sort == "rating")
-    {
-        for(int last = counter - 1; last > 0; last --)
-        {
-             for(int cur = 0; cur < last; cur++)
-             {
-                 if(vid[cur]->ratings(vid[cur + 1]))
-                 {
-                    swap(vid[cur], vid[cur + 1]);
-                 }
-             }
-         }
-    }
-    else //makes the default sorting by title.
-    {
-        for(int last = counter - 1; last > 0; last--)
-        {
-            for(int cur = 0; cur < last; cur++)
-            {
-                if(vid[cur]->titles(vid[cur + 1]))
-                {
-                    swap(vid[cur], vid[cur + 1]);
-                }
-            }
-        }
-    }
-
-
-    for(int i = 0; i < counter; i++)
-    {
-        vid[i]->print();
-
-    }
-    */
-    
-    //vid.printList();

@@ -119,7 +119,7 @@ void List::search(string name)
         ptr = ptr->m_next;
     }
 
-    cout << "Title " << name << " not in list." << endl;
+    cerr << "Title " << name << " not in list." << endl;
 }
 
 bool List::freeName(string name)
